@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Custom CSS for the capital display */
+        #capital {
+            font-weight: bold;
+            font-size: 18px;
+            color: #c75833; /* Blue color */
+        }
+    </style>
+    <title>Country Capitals</title>
+</head>
+<body>
+    <h1>Select a Country:</h1>
+    <select id="countrySelect" onchange="displayCapital()">
+        <option value="">Choose a country</option>
+        <option value="India">India</option>
+        <option value="United States">United States</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Japan">Japan</option>
+        <option value="Brazil">Brazil</option>
+    </select>
+    <p id="capital"></p>
+
+    <script>
+        function displayCapital() {
+            const selectBox = document.getElementById("countrySelect");
+            const capitalDisplay = document.getElementById("capital");
+            const selectedCountry = selectBox.value;
+
+            // Define a mapping of countries to capitals
+            const countryCapitals = {
+                India: "New Delhi",
+                "United States": "Washington, D.C.",
+                "United Kingdom": "London",
+                Japan: "Tokyo",
+                Brazil: "Brasília"
+            };
+
+            // Display the capital based on the selected country
+            capitalDisplay.textContent = `Capital: ${countryCapitals[selectedCountry] || ""}`;
+        }
+    </script>
+</body>
+</html>
